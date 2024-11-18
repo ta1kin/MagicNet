@@ -43,7 +43,7 @@ const App = () => {
                     <Route path={ RouterPathes.Docs } element={ <DocsPage /> } />
                     <Route path={ RouterPathes.Book + '/:id' } element={ <BookPage /> } />
                 </Route>
- 
+  
                 <Route path={ RouterPathes.Error } element={ <ErrorPage /> } />
                 <Route path={ RouterPathes.NotFound } element={ <NotFoundPage /> } />
             </Routes>
