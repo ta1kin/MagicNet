@@ -1,6 +1,6 @@
-@use "./mixins";
-@use "./vars";
-@use "./fonts";
+@use "./layout/mixins";
+@use "./layout/vars";
+@use "./layout/fonts";
 
 
 * {
@@ -43,9 +43,6 @@ body {
 .wrapper {
     width: 100%;
     min-height: 100lvh;
-    
-    background: var(--primary-bg-color);
-    color: var(--primary-font-color);
 }
 
 button {
@@ -79,6 +76,6 @@ i {
     }
 
     @media ( max-width: 425px ) {
-        padding-inline: 2%;
+        padding-inline: 3%;
     }
 }

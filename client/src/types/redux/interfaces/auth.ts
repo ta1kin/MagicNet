@@ -1,6 +1,9 @@
 export interface AuthState {
-    email: string,
-    password: string,
-    accessToken: string,
-    isValid: boolean,
+    profession: string
+    whoIs: [string] | []
+    email: string
+    password: string
+    saveMe: boolean
+    accessToken: string
+    code: string
 }

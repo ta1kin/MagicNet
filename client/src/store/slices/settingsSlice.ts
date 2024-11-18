@@ -1,7 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
+import type { SettingsState } from '@/types/redux/interfaces/setting'
+type SettingsState = typeof SettingsState
 
-const initialState = {
+const initialState: SettingsState = {
     theme: 'light',
     lng: 'ru'
 }

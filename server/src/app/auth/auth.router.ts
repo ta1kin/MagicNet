@@ -16,9 +16,7 @@ authRouter.post( '/verify-code', authController.verifyCode )
 authRouter.get( '/verify-email', authController.verifyEmail )
 authRouter.get( '/update-token', authController.updateTokens )
 
-// authRouter.use( protect )
 authRouter.put( '/rewrite-pass', protect, authController.rewritePass )
-
 authRouter.delete( '/delete', protect, authController.deleteUser )
 
 export default authRouter

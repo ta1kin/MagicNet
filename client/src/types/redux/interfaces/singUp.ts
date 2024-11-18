@@ -1,4 +1,6 @@
 export interface SingUpState {
-    step: number,
+    step: number
     maxStep: number
+    isClicked: boolean
+    isLoading: boolean
 }

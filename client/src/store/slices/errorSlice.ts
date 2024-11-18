@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import type { ErrorState } from '@/types/redux/interfaces/error'
+type ErrorState = typeof ErrorState
 
-const initialState = {
+const initialState: ErrorState = {
     text: ''
 }
 
@@ -9,11 +11,11 @@ const errorSlice = createSlice({
     name: 'error',
     initialState,
     reducers: {
-        resetText: state => {
+        resetError: state => {
             state.text = ''
         }
     }
 })
 
-export const { resetText } = errorSlice.actions
+export const { resetError } = errorSlice.actions
 export default errorSlice.reducer

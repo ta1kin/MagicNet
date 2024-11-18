@@ -1,33 +1,157 @@
 :root {
     #light {
-        --primary-block-bg-color: #ffffff;
-        --primary-block-line-color: #adadad;
-        --primary-block-shadow-color: #3e3e3e;
+        --auth-background: #fffffe;
+
+        --auth-headline: #33272a;
+        --auth-sub-headline: #594a4e;
+
+        --auth-card-background: #faeee7;
+        --auth-card-line: #7c404f;
+        --auth-card-headline: #33272a;
+        --auth-card-paragraph: #594a4e;
+
+        --auth-button-background: #ff8ba7;
+        --auth-button-text: #33272a;
+
+        --auth-checkbox-main-color: #47363a;
+        --auth-checkbox-checked-color: #ff8ba7;
+
+        --auth-input-main-color: #52393f;
+        --auth-input-icon-main-color: #52393f;
+        --auth-input-focused-color: #ff8ba7;
+
+        --auth-hover-background: #ffc6c7;
+        --auth-hover-text: #fffffe;
+        --auth-hover-shadow: #2d2054;
+        --auth-loader-color: #ff6589;
     }
     
     #dark {
-        --primary-block-bg-color: #ffffff;
-        --primary-block-line-color: #adadad;
-        --primary-block-shadow-color: #3e3e3e;
+        --auth-background: #242629;
+        
+        --auth-headline: #fffffe;
+        --auth-sub-headline: #94a1b2;
+
+        --auth-card-background: #16161a;
+        --auth-card-headline: #fffffe;
+        --auth-card-paragraph: #94a1b2;
+
+        --auth-button-background: #7f5af0;
+        --auth-button-text: #fffffe;
+
+        --auth-hover-background: #7f5af0;
+        --auth-hover-text: #2cb67d;
+        --auth-hover-shadow: #ffc6c7;
     }
 }
 
 .auth-layout {
+    --border-radius: 5px;
+    --media-width: 550px;
+
+
+    width: 100%;
     min-height: 100lvh;
+    background: var(--auth-background);
+
+    .sing-in__conteiner,
+    .sing-up__conteiner,
+    .recovery-pass__conteiner {
+        min-height: 150px;
+    }
+
+    .error {
+        --auth-input-main-color: #ff0000 !important;
+        --auth-input-focused-color: #ff0000 !important;
+    }
+
+    .MuiSvgIcon-root {
+        path {
+            fill: var( --auth-input-icon-main-color );
+        }
+    }
+
+    .Mui-checked {
+        path {
+            fill: var(--auth-checkbox-checked-color);
+        }
+    }
+
+    .MuiBox-root {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        &.Translate {
+            translate: -8px 0;
+        }
+
+        .MuiFormControlLabel-root {
+            color: var(--auth-button-text);
+            border: 2px solid var(--auth-checkbox-main-color);
+            border-radius: var(--border-radius);
+
+            .MuiRadio-root {
+                color: var(--auth-checkbox-main-color);
+
+                &.Mui-checked {
+                    color: var(--auth-checkbox-checked-color);
+                }
+            }
+
+            &:has( > .Mui-checked ) {
+                border-color: var(--auth-checkbox-checked-color);
+            }
+
+            &.noBorder {
+                border: none;
+            }
+        }
+    }
+
+    .MuiFormControl-root {
+        margin: 10px;
+
+        .MuiInputLabel-root {
+            color: var( --auth-input-main-color );
+
+            &.Mui-focused {
+                color: var( --auth-input-focused-color );
+            }
+        }
+
+        .MuiOutlinedInput-root { 
+            & fieldset {
+                border-width: 2px;
+                border-color: var( --auth-input-main-color );
+            }
+            &:hover fieldset {
+                border-width: 2px;
+                border-color: var( --auth-input-focused-color );
+            }
+            &.Mui-focused fieldset { 
+                border-width: 2px;
+                border-color: var( --auth-input-focused-color );
+            } 
+        }
+    }
 
     .component-block {
         width: 480px;
         padding: 10px 20px;
-        background: var(--primary-block-bg-color);
-        border: 1px solid var(--primary-block-line-color);
-        border-radius: 16px;
-        box-shadow: 0px 0px 4px var(--primary-block-shadow-color);
+        background: var(--auth-card-background);
+        border-radius: var(--border-radius);
+        box-shadow: 0px 1px 3px var(--auth-hover-shadow);
+
+        @media ( max-width: 550px ) {
+            width: 100%;
+        }
     }
 
     .title {
-        font-size: 1.2em;
-        color: var(--primary-font-color);
-        font-weight: 700;
+        font-size: 1.3em;
+        color: var(--auth-card-headline);
+        font-weight: 800;
         letter-spacing: -1px;
 
         span {
@@ -38,11 +162,13 @@
 
     .pre-title {
         font-size: 1.05em;
+        font-weight: 800;
+        color: var(--auth-sub-headline);
     }
     
     .description {
         font-size: 1em;
-        color: var(--primary-font-color);
+        color: var(--auth-sub-headline);
         opacity: 0.8;
         letter-spacing: -0.5px;
         font-weight: 500;
@@ -53,6 +179,35 @@
     
         .instraction__main {
             width: 70%;
+        }
+    }
+
+    .form-control {
+        width: 455px;
+        padding: 0;
+
+        @media ( max-width: 550px ) {
+            width: 106%;
+        }
+    }
+
+    .checkbox-form {
+        padding-inline: 30px;
+    }
+
+    .btns__content {
+        button {
+            font-weight: 600;
+            height: 40px;
+            color: var(--auth-button-text);
+    
+            &:first-of-type {
+                background: var(--auth-button-background);
+            }
+    
+            &:last-of-type {
+                border: 2px solid var(--auth-button-background);
+            }
         }
     }
 }

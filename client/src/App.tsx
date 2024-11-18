@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import type { State } from './types/redux/'
+import type { State } from './types/redux'
 
-import { RouterPathes } from './config/routerConfig'
+import { RouterPathes } from './config/config.router'
 
 import AuthLayout from './layouts/AuthLayout'
 import HomeLayout from './layouts/HomeLayout'
