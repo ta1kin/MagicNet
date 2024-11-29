@@ -37,11 +37,6 @@
     border-bottom: 1.5px solid var(--home-line);
     position: relative;
 
-    @media ( max-width: 600px ) {
-        overflow-x: scroll;
-    }
-    overflow-x: auto;
-
     .MuiButtonBase-root {
         color: var(--home-btn-color);
         font-weight: 600;

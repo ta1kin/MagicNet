@@ -12,8 +12,6 @@ type LoginData = typeof LoginData
 const SERVER_URL = import.meta.env.VITE_SERVER_URL
 const SING_IN = import.meta.env.VITE_SING_IN
 
-console.log( SERVER_URL )
-
 const initialState: SingInState = {
     step: 0,
     isClicked: false,

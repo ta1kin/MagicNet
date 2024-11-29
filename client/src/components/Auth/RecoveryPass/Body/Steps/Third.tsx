@@ -69,9 +69,9 @@ const ThirdStep = ({ t, stepPath }: RecoveryStepProps) => {
         <>
             <Box>
                 <FormControl variant="outlined"  className={ `${ isPassErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{ t( `${stepPath}.pass` ) }</InputLabel>
+                    <InputLabel htmlFor="outlined-rewrite-pass">{ t( `${stepPath}.pass` ) }</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-rewrite-pass"
                         type={input.showPass ? 'text' : 'password'}
                         value={input.pass}
                         onChange={handleInputPass}
@@ -94,9 +94,9 @@ const ThirdStep = ({ t, stepPath }: RecoveryStepProps) => {
                     />
                 </FormControl>
                 <FormControl variant="outlined"  className={ `${ isRepassErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{ t( `${stepPath}.repass` ) }</InputLabel>
+                    <InputLabel htmlFor="outlined-rewrite-repass">{ t( `${stepPath}.repass` ) }</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-rewrite-repass"
                         type={input.showRepass ? 'text' : 'password'}
                         value={input.repass}
                         onChange={handleInputRepass}

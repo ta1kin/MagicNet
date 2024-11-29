@@ -82,9 +82,9 @@ const ThirdStep = ({ t, stepPath }: RecoveryStepProps) => {
         <>  
             <Box>
             <FormControl variant="outlined" className={ `${ isEmailErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{ t(`${stepPath}.email`) }</InputLabel>
+                    <InputLabel htmlFor="outlined-register-email">{ t(`${stepPath}.email`) }</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-register-email"
                         type="text"
                         value={input.email}
                         onChange={handleInputEmail}
@@ -97,9 +97,9 @@ const ThirdStep = ({ t, stepPath }: RecoveryStepProps) => {
                     />
                 </FormControl>
                 <FormControl variant="outlined" className={ `${ isPassErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{ t(`${stepPath}.pass`) }</InputLabel>
+                    <InputLabel htmlFor="outlined-register-pass">{ t(`${stepPath}.pass`) }</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-register-pass"
                         type={input.showPass ? 'text' : 'password'}
                         value={input.pass}
                         onChange={handleInputPass}
@@ -122,9 +122,9 @@ const ThirdStep = ({ t, stepPath }: RecoveryStepProps) => {
                     />
                 </FormControl>
                 <FormControl variant="outlined" className={ `${ isRepassErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{t(`${stepPath}.repass`)}</InputLabel>
+                    <InputLabel htmlFor="outlined-register-repass">{t(`${stepPath}.repass`)}</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-register-repass"
                         type={input.showRepass ? 'text' : 'password'}
                         value={input.repass}
                         onChange={handleInputRepass}

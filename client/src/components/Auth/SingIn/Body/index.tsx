@@ -84,9 +84,9 @@ const SingInBody = ({ i18nPath, baseBodyPath }: BodyProps) => {
         <>
             <Box>
                 <FormControl variant="outlined" className={ `${ isEmailErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{ t(`${baseBodyPath}.email`) }</InputLabel>
+                    <InputLabel htmlFor="outlined-login-email">{ t(`${baseBodyPath}.email`) }</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-login-email"
                         type="text"
                         value={input.email}
                         onChange={handleInputEmail}
@@ -99,9 +99,9 @@ const SingInBody = ({ i18nPath, baseBodyPath }: BodyProps) => {
                     />
                 </FormControl>
                 <FormControl variant="outlined" className={ `${ isPassErr ? 'error' : '' }` }>
-                    <InputLabel htmlFor="outlined-adornment-password">{ t(`${baseBodyPath}.pass`) }</InputLabel>
+                    <InputLabel htmlFor="outlined-login-password">{ t(`${baseBodyPath}.pass`) }</InputLabel>
                     <OutlinedInput
-                        id="outlined-adornment-password"
+                        id="outlined-login-password"
                         type={input.showPass ? 'text' : 'password'}
                         value={input.password}
                         onChange={handleInputPass}

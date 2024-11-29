@@ -5,8 +5,8 @@ WORKDIR /server
 COPY ./server .
 
 RUN npm install
+
 RUN npm run generate
-RUN npm run migrate
 
 EXPOSE 3000
 

@@ -21,14 +21,14 @@ const HomePage = () => {
 
     const accessToken = useSelector( (state: State) => state.auth.accessToken )
 
-    // useEffect(
-    //     () => {
-    //         if( !accessToken ) {
-    //             navigate( RouterPathes.Login )
-    //         }
-    //     }, 
-    //     [accessToken]
-    // )
+    useEffect(
+        () => {
+            if( !accessToken ) {
+                navigate( RouterPathes.Login )
+            }
+        }, 
+        [accessToken]
+    )
 
     document.title = t(titlePath)
     return (
