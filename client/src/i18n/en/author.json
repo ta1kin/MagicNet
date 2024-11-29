@@ -1,3 +1,76 @@
 {
-    "title": "Об авторе"
+  "title": "About the Author",
+  "header": {
+      "title": "Ilya Dmitrievich Taraskin: \"Full Stack Node.js Developer\"",
+      "description": "Possesses a wide range of technical skills and knowledge that allow him to create high-quality web solutions. The list of skills and abilities will be presented below on this page!"
+  },
+  "about": {
+      "title": "About the Author:",
+      "description": "Being essentially a hardworking and persistent person, I have a strong desire to constantly develop myself in the field of FullStack development using Node.js. I am punctual and responsible, always striving to fulfill my obligations and achieve set goals. My experience includes developing full-cycle web applications using Node.js and related frameworks, creating secure web applications. I am well-versed in asynchronous programming and event-driven architecture. My desire for self-development and deepening knowledge allows me to constantly learn new technologies and innovative approaches in development. I'm ready to work overtime when necessary to complete all promised tasks. For me, the main thing is not just to perform the work, but to do it qualitatively and on time. I strive to find a job where I can develop, learn something new, and absorb the experience of more experienced colleagues. I'm ready to apply my skills and knowledge to create efficient, scalable, and secure web applications using Node.js and modern development practices."
+  },
+  "experience": {
+      "title": "Key Skills:",
+      "skills": [
+          {
+              "title": "Client-side",
+              "items": [
+                  "HTML5",
+                  "CSS3",
+                  "JavaScript",
+                  "TypeScript",
+                  "jQuery",
+                  "Gulp",
+                  "Webpack",
+                  "Vite",
+                  "Vue.js",
+                  "React.js",
+                  "Nuxt.js",
+                  "Next.js"
+              ]
+          },
+          {
+              "title": "Server-side",
+              "items": [
+                  "Node.js",
+                  "Express.js",
+                  "Nest.js",
+                  "RESTful API",
+                  "GraphQL",
+                  "PostgreSQL",
+                  "Redis",
+                  "MongoDB"
+              ]
+          },
+          {
+              "title": "Administration",
+              "items": [
+                  "Docker",
+                  "Docker Compose",
+                  "K8s (Kubernetes)",
+                  "Linux",
+                  "CI/CD",
+                  "Git",
+                  "Unit testing",
+                  "E2e testing"
+              ]
+          },
+          {
+              "title": "Other",
+              "items": [
+                  "Go",
+                  "PHP",
+                  "Python"
+              ]
+          }
+      ]
+  },
+  "projects": {
+      "title": "Created Projects:",
+      "items": [
+          {
+              "headline": "Title:",
+              "link": "http://localhost:5173/author"
+          }
+      ]
+  }
 }

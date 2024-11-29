@@ -23,10 +23,10 @@ export interface LoginData {
 }
 
 export interface RegisterData {
-    profession: string,
+    profValue: string,
+    whoIs: string[] | []
     email: string,
     password: string,
-    saveMe: boolean,
 }
 
 export interface RecoveryStepProps {

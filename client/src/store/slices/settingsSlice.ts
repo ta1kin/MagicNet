@@ -15,11 +15,14 @@ const settingsSlice = createSlice({
         toggleTheme: state => {
             state.theme =  state.theme === 'light' ? 'dark' : 'light'
         },
-        toggleLang: state => {
-            state.lng = state.lng === 'ru' ? 'en' : 'ru'
+        setLng: (state, action) => {
+            state.lng = action.payload
+        },
+        setTheme: (state, action) => {
+            state.theme = action.payload
         }
     }
 })
 
-export const { toggleTheme, toggleLang } = settingsSlice.actions
+export const { toggleTheme, setLng, setTheme } = settingsSlice.actions
 export default settingsSlice.reducer

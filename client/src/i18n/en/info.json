@@ -1,3 +1,40 @@
 {
-    "title": "Главная"
-}
+    "title": "Home",
+    "header": {
+      "title": "Service Functionality Information",
+      "description": "The project represents an online platform that provides users with a wide range of tools for managing personal data and documents. The main features of the project include user registration and authentication, a personal account with profile settings and an intuitive interface, a technical support communication system for quick assistance when needed, a function for uploading and storing PDF files in the user's personal archive, as well as an integrated document viewer for comfortable work with uploaded files. The platform was developed with user-friendliness in mind and provides users with the ability to easily manage their data, customize the system according to their preferences, and receive necessary support when problems arise."
+    },
+    "description": [
+      {
+        "title": "About the Site",
+        "description": "The informational page of the site is an important section that provides visitors with general information about the company, its activities, and goals. It plays a key role in building trusting relationships with the audience and enhancing brand prestige.",
+        "img": "info"
+      },
+      {
+        "title": "Resume",
+        "description": "An IT specialist's resume clearly reflects their professional skills, work experience, and achievements in the field of information technologies.",
+        "img": "skills"
+      },
+      {
+        "title": "Authentication",
+        "description": "The site's authentication system is a complex of measures ensuring the security and access control to resources of the web application. Its main goal is to determine who the user is and ensure that only authorized individuals have access to specific parts of the site.",
+        "img": "auth"
+      },
+      {
+        "title": "Personal Account",
+        "description": "The personal account of the site is a protected personal space of the user that provides him with convenient access to various functions and data of the site. It's like a 'virtual workspace' where the user can manage their account and interact with the resource.",
+        "img": "personal"
+      },
+      {
+        "title": "Service Customization",
+        "description": "Service customization is the ability of the system to adapt to individual user needs and preferences. This is a key aspect of modern web applications that allows each user to receive optimal service experience.",
+        "img": "customizability"
+      },
+      {
+        "title": "Document Storage",
+        "description": "The document storage on the site is a web platform designed for storing, organizing, and managing electronic documents. It allows users to safely store and access PDF files.",
+        "img": "docs"
+      }
+    ]
+  }
+  

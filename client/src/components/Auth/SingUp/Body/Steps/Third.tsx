@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react'
+import { useState, ChangeEvent, MouseEvent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setEmail, setPassword } from '@/store/slices/authSlice'
 
@@ -42,10 +42,10 @@ const ThirdStep = ({ t, stepPath }: RecoveryStepProps) => {
     const handleClickShowPass = () => setInput({ ...input, showPass: !input.showPass })
     const handleClickShowRePass = () => setInput({ ...input, showRepass: !input.showRepass })
 
-    const handleMouseDownPassword = ( event: React.MouseEvent<HTMLButtonElement> ) => {
+    const handleMouseDownPassword = ( event: MouseEvent<HTMLButtonElement> ) => {
         event.preventDefault()
     }
-    const handleMouseUpPassword = ( event: React.MouseEvent<HTMLButtonElement> ) => {
+    const handleMouseUpPassword = ( event: MouseEvent<HTMLButtonElement> ) => {
         event.preventDefault()
     }
 

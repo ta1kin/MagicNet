@@ -6,7 +6,6 @@
         --auth-sub-headline: #594a4e;
 
         --auth-card-background: #faeee7;
-        --auth-card-line: #7c404f;
         --auth-card-headline: #33272a;
         --auth-card-paragraph: #594a4e;
 
@@ -20,7 +19,6 @@
         --auth-input-icon-main-color: #52393f;
         --auth-input-focused-color: #ff8ba7;
 
-        --auth-hover-background: #ffc6c7;
         --auth-hover-text: #fffffe;
         --auth-hover-shadow: #2d2054;
         --auth-loader-color: #ff6589;
@@ -28,7 +26,7 @@
     
     #dark {
         --auth-background: #242629;
-        
+
         --auth-headline: #fffffe;
         --auth-sub-headline: #94a1b2;
 
@@ -39,9 +37,16 @@
         --auth-button-background: #7f5af0;
         --auth-button-text: #fffffe;
 
-        --auth-hover-background: #7f5af0;
-        --auth-hover-text: #2cb67d;
-        --auth-hover-shadow: #ffc6c7;
+        --auth-checkbox-main-color: #94a1b2;
+        --auth-checkbox-checked-color: #7f5af0;
+
+        --auth-input-main-color: #94a1b2;
+        --auth-input-icon-main-color: #94a1b2;
+        --auth-input-focused-color: #7f5af0;
+
+        --auth-hover-text: #fffffe;
+        --auth-hover-shadow: #010101;
+        --auth-loader-color: #7f5af0;
     }
 }
 

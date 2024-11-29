@@ -1,3 +1,15 @@
+@forward "./ui/mui.button.scss";
+@forward "./ui/mui.input.scss";
+@forward "./ui/mui.label.scss";
+@forward "./ui/mui.svg.scss";
+@forward "./ui/theme-lng.scss";
+
+@use "./components/mixins";
+@use "./components/vars";
+@use "./components/fonts";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+

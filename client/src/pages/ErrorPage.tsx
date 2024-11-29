@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import ErrorContent from '@Components/Error/'
+import ErrorContent from '@/components/Error/'
 
 
 const ErrorPage = () => {

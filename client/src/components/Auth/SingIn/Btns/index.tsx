@@ -1,7 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { loginAsync, onIsClicked } from '@/store/slices/singInSlice'
+import { loginAsync, onIsClicked, resetValid } from '@/store/slices/singInSlice'
+import { setAccessToken, setRole, resetData } from '@/store/slices/authSlice'
+import { setPersonalInfo } from '@/store/slices/homeSlice'
+import { setTheme } from '@/store/slices/settingsSlice'
 import { RouterPathes } from '@/config/config.router'
 
 import Button from '@mui/material/Button'
@@ -21,8 +24,7 @@ const SingInBtns = ({ i18nPath, baseBtnsPath }: BtnsProps) => {
     const data: LoginData = useSelector( ( state: State )  => (
         {   
             email: state.auth.email,
-            password: state.auth.password,
-            saveMe: state.auth.saveMe
+            password: state.auth.password
         }
     ))
     
@@ -33,15 +35,35 @@ const SingInBtns = ({ i18nPath, baseBtnsPath }: BtnsProps) => {
         dispatch( onIsClicked() )
 
         if( data.email && data.password ) {
-            await dispatch( loginAsync( data ) )
+            const { payload } = await dispatch( loginAsync( data ) )
+
+            console.log( payload )
+
+            if( payload ) {
+                dispatch(setAccessToken(payload.accessToken))
+                dispatch(setRole(payload.role))
+                dispatch(setTheme(payload.theme))
+                dispatch(
+                    setPersonalInfo(
+                        {
+                            nickname: payload.nickname,
+                            name: payload.name,
+                            phone: payload.phone,
+                        }
+                    )
+                )
+                dispatch(resetValid())
+                navigate( RouterPathes.Home )
+            }
         }
     }
     const handlePrev = () => {
         navigate( RouterPathes.Register )
+        dispatch(resetData())
     }
 
     return (
-        <>  
+        <>
             <div className="btns__content w-full flex flex-col gap-[10px]">
                 <Button variant="contained"
                         className="w-full"

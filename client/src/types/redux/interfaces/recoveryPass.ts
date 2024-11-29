@@ -3,4 +3,5 @@ export interface RecoveryPassState {
     maxStep: number
     isClicked: boolean
     isLoading: boolean
+    codeIsValid: boolean
 }

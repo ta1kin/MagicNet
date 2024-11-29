@@ -1,0 +1,30 @@
+:root {
+    #light {
+        --lang-color: #231a1c;
+        --lang-decoration: #231a1c;
+        --decoration-hover: #231a1c40;
+    }
+    
+    #dark {
+        --lang-color: #94a1b2;
+        --lang-decoration: #94a1b2;
+        --lang-decoration-hover: #01010142;
+    }
+}
+
+.select-lang {
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--lang-color);
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--lang-decoration);
+    }
+
+    &.is-active {
+        text-decoration: underline;
+        text-decoration-color: var(--decoration-hover);
+    }
+}

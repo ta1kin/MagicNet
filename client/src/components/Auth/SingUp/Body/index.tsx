@@ -18,7 +18,7 @@ const SingUpBody = ({ i18nPath, baseBodyPath, step }: BodyProps) => {
                 i18n.exists(baseBodyPath)
                     &&
                     <div className="body__content">
-                        { step === 0 && <FirsStep t={t} stepPath={ `${baseBodyPath}.radioList` } />   }
+                        { step === 0 && <FirsStep t={t} stepPath={ `${baseBodyPath}` } />   }
                         { step === 1 && <SecondStep t={t} stepPath={ baseBodyPath } /> }
                         { step === 2 && <ThirdStep t={t} stepPath={ baseBodyPath } />  }
                     </div>   

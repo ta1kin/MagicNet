@@ -1,4 +1,5 @@
 import express from 'express'
+import fileUpload from 'express-fileupload'
 import morgan from 'morgan'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
@@ -6,9 +7,9 @@ import helmet from 'helmet'
 
 import homeRouter from './app/home/home.router'
 import authRouter from './app/auth/auth.router'
-import settingsRouter from './app/settings/settings.router'
-import dataRouter from './app/data/data.router'
+import configRouter from './app/config/config.router'
 import infoRouter from './app/info/info.router'
+import docsRouter from './app/docs/docs.router'
 
 import {
   PORT,
@@ -24,6 +25,7 @@ import { notFound, errorHandler } from './app/middlewares/error.middleware'
 const start = async () => {
   const app = express()
 
+  app.use( express.static('./src/public/data') )
   app.use( express.json() )
   app.use( cookieParser() )
   app.use( helmet() )
@@ -31,11 +33,13 @@ const start = async () => {
   if( isDev ) app.use( morgan( 'dev' ) )
   if( isDev ) app.use( cors() )
 
+  app.use( fileUpload() )
+
   app.use( '/api', homeRouter )
   app.use( '/api/auth', authRouter )
-  app.use( '/api', settingsRouter )
-  app.use( '/api', dataRouter )
+  app.use( '/api', configRouter )
   app.use( '/api', infoRouter )
+  app.use( '/api', docsRouter )
 
   app.use( notFound )
   app.use( errorHandler )

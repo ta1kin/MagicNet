@@ -1,0 +1,38 @@
+:root {
+    #light {
+        --input-border: #33272a;
+        --input-color: #33272a;
+        --input-border-hover: #9b4358;
+        --input-border-focused: #ff8ba7;
+    }
+    
+    #dark {
+        --input-border: #010101;
+        --input-color: #fffffe;
+        --input-border-hover: #5f5189;
+        --input-border-focused: #7f5af0;
+    }
+}
+
+.MuiOutlinedInput-root {
+    input {
+        color: var(--input-color) !important;
+    }
+
+    .MuiSelect-select {
+        color: var(--input-color) !important;
+    }
+
+    & fieldset {
+        border-width: 3px;
+        border-color: var(--input-border) !important;
+    }
+    &:hover fieldset {
+        border-width: 3px;
+        border-color: var(--input-border-hover) !important;
+    }
+    &.Mui-focused fieldset { 
+        border-width: 3px;
+        border-color: var(--input-border-focused) !important;
+    } 
+}

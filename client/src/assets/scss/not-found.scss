@@ -1,4 +1,21 @@
+:root {
+    #light {
+        --not-found-background: #faeee7;
+        --not-found-headline: #33272a;
+        --not-found-button-background: #ff8ba7;
+        --not-found-button-font-color: #33272a;
+    }
+    
+    #dark {
+        --not-found-background: #242629;
+        --not-found-headline: #fffffe;
+        --not-found-button-background: #7f5af0;
+        --not-found-button-font-color: #fffffe;
+    }
+}
+
 .not-found-page {
+    background: var(--not-found-background);
     height: 100lvh;
     width: 100%;
 
@@ -6,11 +23,15 @@
         height: 100%;
 
         .not-found-page__info {
+            color: var(--not-found-headline);
 
             .info__widget {
                 
                 button {
+                    font-weight: 600;
                     transition: all .5s ease;
+                    background: var(--not-found-button-background);
+                    color: var(--not-found-button-font-color);
     
                     &:hover {
                         translate: 2.5px -2.5px;

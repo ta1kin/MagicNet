@@ -36,6 +36,8 @@ export const protect = asyncHandler( async (req: Request, res:Response, next: Ne
         token = req.headers.authorization.split( ' ' )[1]
     }
 
+    console.log( token )
+
     if( !token ) {
         res.status( 401 )
         throw new Error('Not authorized, I don`t have a token!')

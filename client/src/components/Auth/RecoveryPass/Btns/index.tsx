@@ -1,11 +1,19 @@
+import { MouseEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { nextStep, prevStep } from '@/store/slices/recoveryPassSlice'
-import { verifyEmailAsync, verifyCodeAsync, sendNewPassAsync, onIsClicked } from '@/store/slices/recoveryPassSlice'
+import { resetData } from '@/store/slices/authSlice'
+import 
+    { 
+        nextStep, prevStep, 
+        verifyEmailAsync, verifyCodeAsync, 
+        sendNewPassAsync, onIsClicked 
+    } 
+    from '@/store/slices/recoveryPassSlice'
 import { RouterPathes } from '@/config/config.router'
 
 import Button from '@mui/material/Button'
+import validator from 'validator'
 
 import type { BtnsProps } from '@/types/types.auth'
 import type { State } from '@/types/redux'
@@ -32,44 +40,57 @@ const RecoveryBtns = ( { i18nPath, baseBtnsPath }: BtnsProps ) => {
         }
     ) )
     
-    const handleNext = async () => {
+    const handleNext = async (_event: MouseEvent<HTMLButtonElement>) => {
         dispatch( onIsClicked() )
 
         switch ( step ) {
             case 0: {
-                if( email ) {
+                if( validator.isEmail( email) ) {
                     await dispatch( verifyEmailAsync( email ) )
                     dispatch( nextStep() )
                 }
                 break
             }
             case 1: {
-                if( code ) {
-                    await dispatch( verifyCodeAsync( code ) )
-                    dispatch( nextStep() )
+                if( validator.isEmail( email) && code ) {
+                    const data = {
+                        email,
+                        secret_code: code,
+                    }
+                    await dispatch( verifyCodeAsync( data ) )
                 }
                 break
             }
             case 2: {
                 if( password ) {
-                    await dispatch( sendNewPassAsync( password ) )
-                    dispatch( nextStep() )
+                    const data = {
+                        email,
+                        password: password,
+                    }
+                    await dispatch( sendNewPassAsync( data ) )
                 }
                 break
             }
             case 3: {
                 navigate( RouterPathes.Login )
+                dispatch(resetData())
                 break
             }
         }
     }
-    const handlePrev = () => {
+    const handlePrev = (_event: MouseEvent<HTMLButtonElement>) => {
         switch ( step ) {
-            case 0 || maxStep - 1: {
+            case 0: {
                 navigate( RouterPathes.Login )
+                dispatch(resetData())
                 break
             }
-            default:  {
+            case maxStep - 1: {
+                navigate( RouterPathes.Login )
+                dispatch(resetData())
+                break
+            }
+            default: {
                 dispatch( prevStep() )
                 break
             }

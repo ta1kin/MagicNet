@@ -53,19 +53,21 @@ const SecondStep = ({ t, stepPath }: RecoveryStepProps) => {
             <Box>
                 <FormGroup className="checkbox-form">
                     {
-                        labels.map( (item, index) => (
-                            <FormControlLabel
-                                className="noBorder"
-                                control={
-                                    <Checkbox
-                                        id={item}
-                                        checked={whoIsLocal[ item ]}
-                                        onChange={handleChange}
-                                    />
-                                }
-                                label={t( `${stepPath}.${profession}.${index}` )}
-                            />
-                        ) )
+                        labels.map( 
+                            (item, index) => (
+                                <FormControlLabel
+                                    className="noBorder"
+                                    control={
+                                        <Checkbox
+                                            id={item}
+                                            checked={whoIsLocal[ item ]}
+                                            onChange={handleChange}
+                                        />
+                                    }
+                                    label={t( `${stepPath}.${profession}.${index}` )}
+                                />
+                            ) 
+                        )
                     }
                 </FormGroup>
             </Box>

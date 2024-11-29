@@ -1,0 +1,18 @@
+{
+    "header": {
+        "logo": {
+            "title": "Magic Net",
+            "description": "Resume Site"
+        },
+        "text": {
+            "headline": "Web Resume: Show off the author's capabilities!",
+            "paragraph": "The service is designed not only for HR to view and download the resume, but also for specialists to assess skills by viewing the service! For consideration of the full functionality, registration is required!",
+            "button": "Registration / Login"
+        }
+    },
+    "footer": {
+        "title": "Magic Net",
+        "description": "All rights reserved!",
+        "navTitle": "My Services:"
+    }
+}

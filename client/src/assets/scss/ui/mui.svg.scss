@@ -1,0 +1,16 @@
+:root {
+    #light {
+        --svg-fill: #33272a;
+    }
+    
+    #dark {
+        --svg-fill: #fffffe;
+    }
+}
+
+
+.MuiSvgIcon-root {
+    path {
+        fill: var(--svg-fill);
+    }
+}

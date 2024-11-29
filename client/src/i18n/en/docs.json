@@ -1,0 +1,18 @@
+{
+    "title": "Documents",
+    "nav": {
+        "selection": {
+            "name": "Sort Key",
+            "date": "Date",
+            "headline": "Name"
+        },
+        "input": "Search Term",
+        "btn": "Search"
+    },
+    "cardList": {
+        "date": "Date:",
+        "btn": "View Document",
+        "void": "Nothing found!"
+    },
+    "void": "You currently have no documents!"
+}

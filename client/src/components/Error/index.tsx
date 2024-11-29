@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 
 import type { State } from '@/types/redux'
 
+type State = typeof State
+
 
 const ErrorContent = () => {
     const { t } = useTranslation([ 'error' ])

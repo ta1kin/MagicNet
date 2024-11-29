@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import SingUpContent from '@Components/Auth/SingUp'
+import SingUpContent from '@/components/Auth/SingUp'
 
 
 const SingUpPage = () => {

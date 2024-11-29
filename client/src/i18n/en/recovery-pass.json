@@ -1,3 +1,44 @@
 {
-    "title": "Восстановение пароля"
+    "title": "Reset Password",
+    "header": {
+        "0": {
+            "description": "We will send a password recovery code to your email",
+            "title": "Password Recovery"
+        },
+        "1": {
+            "title": "We have sent a recovery code to email: {{email}}"
+        },
+        "2": {
+            "title": "Create a new password"
+        },
+        "3": {
+            "description": "Your password has been successfully changed. Please remember to keep it safe.",
+            "title": "Password Changed"
+        }
+    },
+    "body": {
+        "email": "Email",
+        "code": "Confirmation Code",
+        "resetPass": {
+            "pass": "New Password",
+            "repass": "Confirm New Password"
+        }
+    },
+    "btns": {
+        "0": {
+            "next": "Send",
+            "prev": "Go Back to Login"
+        },
+        "1": {
+            "next": "Continue",
+            "prev": "Back"
+        },
+        "2": {
+            "next": "Continue",
+            "prev": "Go Back to Login"
+        },
+        "3": {
+            "next": "Go Back to Login"
+        }
+    }
 }

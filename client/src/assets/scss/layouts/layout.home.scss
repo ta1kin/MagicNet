@@ -1,0 +1,40 @@
+:root {
+    #light {
+        --home-layout-bg: #faeee7;
+    }
+    
+    #dark {
+        --home-layout-bg: #16161a;
+    }
+}
+
+.home-layout__header {
+    background: var(--home-layout-bg);
+    padding-block: 10px;
+
+    .person-img {
+        width: 70px;
+    }
+}
+
+.home-layout__reset {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+
+    .exit {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    button {
+        border-radius: 6px !important;
+    }
+}

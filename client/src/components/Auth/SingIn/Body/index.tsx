@@ -2,7 +2,7 @@ import { useState, MouseEvent, ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { setEmail, setPassword, setSaveMe } from '@/store/slices/authSlice'
+import { setEmail, setPassword, setSaveMe, resetData } from '@/store/slices/authSlice'
 import { RouterPathes } from '@/config/config.router'
 
 import Box from '@mui/material/Box'
@@ -73,6 +73,9 @@ const SingInBody = ({ i18nPath, baseBodyPath }: BodyProps) => {
     const handleChange = ( checked: boolean, _id: number ) => {
         dispatch( setSaveMe( checked ) )
     }
+    const handleLink = () => {
+        dispatch(resetData())
+    }
 
     const isEmailErr = isClicked ? !input.isEmail : false
     const isPassErr = isClicked ? !input.passIsValid : false
@@ -132,7 +135,12 @@ const SingInBody = ({ i18nPath, baseBodyPath }: BodyProps) => {
                         } 
                         label={t(`${baseBodyPath}.saveMe`)} 
                     />
-                    <Link to={`${RouterPathes.Recovery}`}>{ t(`${baseBodyPath}.recoveryPass`) }</Link>
+                    <Link 
+                        to={`${RouterPathes.Recovery}`}
+                        onClick={handleLink}
+                    >
+                        { t(`${baseBodyPath}.recoveryPass`) }
+                    </Link>
                 </div>
             </Box>
         </>

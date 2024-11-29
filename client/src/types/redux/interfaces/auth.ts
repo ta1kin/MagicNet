@@ -1,9 +1,13 @@
 export interface AuthState {
     profession: string
-    whoIs: [string] | []
+    profValue: string
+    whoIs: string[] | []
     email: string
     password: string
-    saveMe: boolean
     accessToken: string
+    resetToken: string
+    saveMe: boolean
     code: string
+    role: string
 }
+

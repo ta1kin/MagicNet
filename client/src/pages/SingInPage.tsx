@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import SingInContent from '@Components/Auth/SingIn'
+import SingInContent from '@/components/Auth/SingIn'
 
 
 const SingInPage = () => {

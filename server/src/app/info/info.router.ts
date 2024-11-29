@@ -1,10 +1,10 @@
-import { Router } from "express"
+import { Router } from 'express'
 
-import infoController from "./info.controller"
+import infoController from './info.controller'
 
 
 const infoRouter = Router()
 
-infoRouter.get( '/info', infoController.getInfo )
+infoRouter.put( '/info', infoController.updateInfo )
 
 export default infoRouter

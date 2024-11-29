@@ -1,0 +1,32 @@
+:root {
+    #light {
+        --button-bg: #ff8ba7;
+        --button-text: #33272a;
+        --info-button-box-shadow: #110d0e;
+    }
+    
+    #dark {
+        --button-bg: #7f5af0;
+        --button-text: #fffffe;
+        --info-button-box-shadow: #81818148;
+    }
+}
+
+.MuiButtonBase-root {
+    &.btn {
+        font-weight: 600;
+        background-color: var(--button-bg);
+        color: var(--button-text);
+
+        &.outlined {
+            background: transparent;
+            border: 2px solid var(--button-bg);
+        }
+
+        svg {
+            path {
+                fill: var(--button-text);
+            }
+        }
+    }
+}

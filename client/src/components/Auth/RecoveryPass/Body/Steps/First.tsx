@@ -8,6 +8,7 @@ import InputLabel from '@mui/material/InputLabel'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormControl from '@mui/material/FormControl'
 import EmailIcon from '@mui/icons-material/Email'
+
 import validator from 'validator'
 
 import type { RecoveryStepProps } from '@/types/types.auth'

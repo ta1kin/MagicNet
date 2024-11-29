@@ -1,0 +1,97 @@
+:root {
+    #light {
+        --info-bg: #fffffe;
+        --info-block-bg: #faeee7;
+        --info-headline: #33272a;
+        --info-paragraph: #594a4e;
+
+        --info-header-headline: #33272a;
+        --info-header-paragraph: #594a4e;
+        --info--header-text-decoration: #231a1c;
+        --info--header-text-decoration-hover: #231a1c4c;
+
+        --info-button-background: #ff8ba7;
+        --info-button-text-color: #33272a;
+        --info-button-box-shadow: #110d0e;
+
+    }
+    
+    #dark {
+        --info-bg: #242629;
+        --info-block-bg: #16161a;
+        --info-headline: #fffffe;
+        --info-paragraph: #94a1b2;
+
+        --info-header-headline: #fffffe;
+        --info-header-paragraph: #94a1b2;
+        --info--header-text-decoration: #eaeaea;
+        --info--header-text-decoration-hover: #eaeaea3e;
+
+        --info-button-background: #7f5af0;
+        --info-button-text-color: #fffffe;
+        --info-button-box-shadow: #b1b1b1;
+    }
+}
+
+.info-page {
+    background: var(--info-bg);
+
+    .info__footer {
+        background: var(--info-block-bg);
+
+        img {
+            width: 40px;
+
+            &.btn {
+                transition: all .5s ease;
+                
+                &:hover {
+                    scale: 1.1;
+                }
+            }
+        }
+
+        .footer__paragraph {
+            color: var(--info-paragraph);
+            text-wrap: nowrap;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+    }
+
+    .card-headline {
+        text-align: start;
+        font-size: 1.5em;
+        color: var(--info-headline);
+        font-weight: 800;
+        letter-spacing: 0.9px;
+    }
+
+    .card-description {
+        font-size: 1.05em;
+        color: var(--info-headline);
+        font-weight: 500;
+        letter-spacing: 0.6px;
+    }
+
+    .description-site__block {
+        width: 45%;
+        min-width: 250px;
+        background: var(--info-block-background);
+        padding: 10px 40px;
+        transition: all .5s ease;
+
+        @media ( max-width: 768px ) {
+            width: 100%;
+        }
+
+        &:hover {
+            box-shadow: 0 0 4px black;
+            translate: 0 -2px;
+        }
+
+        img {
+            width: 50px;
+        }
+    }
+}

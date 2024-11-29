@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import AuthorContent from '@Components/Author/'
+import AuthorContent from '@/components/Author/'
 
 
 const AuthorPage = () => {

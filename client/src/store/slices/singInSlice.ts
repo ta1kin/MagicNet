@@ -1,35 +1,40 @@
 import { createSlice, createAsyncThunk  } from '@reduxjs/toolkit'
 import { RouterPathes } from '@/config/config.router'
 
+import axios from 'axios'
+
 import type{ LoginData } from '@/types/types.auth'
 import type { SingInState } from '@/types/redux/interfaces/singIn'
-
 
 type SingInState = typeof SingInState
 type LoginData = typeof LoginData
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL
+const SING_IN = import.meta.env.VITE_SING_IN
+
+console.log( SERVER_URL )
+
 const initialState: SingInState = {
     step: 0,
     isClicked: false,
-    isLoading: false
+    isLoading: false,
+    isValid: true,
 }
 
 export const loginAsync = createAsyncThunk(
-    `${RouterPathes.Login}sing-in/login`,
+    `${RouterPathes.Login}/login`,
     async ( data: LoginData, _thunkAPI ) => {
-        console.log('Вход в систему')
-        console.log( data )
 
-        return new Promise<void>((resolve) => {
-            console.log('Начало задержки')
-            
-            setTimeout(() => {
-                console.log('Задержка завершена')
-                resolve();
-            }, 1000);
+        if( !SERVER_URL || !SING_IN ) throw new Error( 'Не заданы пути для входа!' )
 
-            return { message: 'success' }
-        })
+        const response = await axios.post(
+            `${SERVER_URL}/${SING_IN}`,
+            data
+        )
+
+        if( response.status !== 201 ) throw new Error( 'Ошибка при попытки входа!' )
+
+        return response.data
     }
 )
 
@@ -48,6 +53,9 @@ const singInSlice = createSlice({
         onIsClicked: state => {
            state.isClicked = true 
         },
+        resetValid: state => {
+            state.isValid = true 
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(loginAsync.pending, (state) => {
@@ -59,9 +67,10 @@ const singInSlice = createSlice({
         })
         builder.addCase(loginAsync.rejected, (state) => {
             state.isLoading = false
+            state.isValid = false
         })
     }
 })
 
-export const { nextStep, prevStep, onIsClicked } = singInSlice.actions
+export const { nextStep, prevStep, onIsClicked, resetValid } = singInSlice.actions
 export default singInSlice.reducer

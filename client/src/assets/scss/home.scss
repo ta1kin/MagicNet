@@ -1,0 +1,185 @@
+:root {
+    #light {
+        --home-bg: #faeee7;
+        --home-line: #33272a2b;
+
+        --home-btn-color: #33272a;
+        --home-btn-end-color: #fa2b5c;
+        --home-btn-hover: #594a4e60;
+
+        --home-file-border: #33272a;
+        --home-file-card-text: #33272a;
+        --home-file-card: transparent;
+        --home-file-card-border: #33272a;
+        --home-file-card-bg-hover: #ff8ba7;
+    }
+    
+    #dark {
+        --home-bg: #16161a;
+        --home-line: #010101;
+
+        --home-btn-color: #fffffe;
+        --home-btn-end-color: #fa2b5c;
+        --home-btn-hover: #7f5af0;
+
+        --home-file-border: #010101;
+        --home-file-card-text: #fffffe;
+        --home-file-card: transparent;
+        --home-file-card-border: #010101;
+        --home-file-card-bg-hover: #7f5af0;
+    }
+}
+
+.home-page {
+    background: var(--home-bg);
+    min-height: 85lvh;
+    border-top: 1.5px solid var(--home-line);
+    border-bottom: 1.5px solid var(--home-line);
+    position: relative;
+
+    @media ( max-width: 600px ) {
+        overflow-x: scroll;
+    }
+    overflow-x: auto;
+
+    .MuiButtonBase-root {
+        color: var(--home-btn-color);
+        font-weight: 600;
+        border-radius: 0;
+
+        &:hover {
+            background: var(--home-btn-hover);
+        }
+
+        &.icon {
+            height: 100%;
+
+            &:hover {
+                background: transparent;
+            }
+        }
+
+        &.end {
+            color: var( --home-btn-end-color);
+        }
+    }
+
+    .content__aside {
+        width: 250px;
+        height: 85lvh;
+        border: 1px solid var(--home-line);
+        position: relative;
+
+        &.closed {
+            width: 60px;
+
+            .aside__list {
+                left: -150px;
+
+                li {
+                    display: none;
+                }
+
+                @media ( max-width: 900px ) {
+                    left: -130px;
+                }
+
+                @media ( max-width: 650px ) {
+                    left: -123px;
+                }
+
+                @media ( max-width: 550px ) {
+                    left: 0px;
+                }
+            }
+        }
+
+        .aside__list {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+
+            .list__header {
+                width: 100%;
+                height: 60px;
+                border-bottom: 1px solid var(--home-line);
+
+                p{
+                    padding-left: 40px;
+
+                    @media ( max-width: 900px ) {
+                        padding-left: 20px;
+                    }
+
+                    @media ( max-width: 650px ) {
+                        padding-left: 10px;
+                    }
+
+                    @media ( max-width: 550px ) {
+                        opacity: 0;
+                    }
+                }
+            }
+    
+            .list__footer {
+                margin-top: auto;
+            }
+        }
+    }
+
+    .content__main {
+        padding: 20px 40px;
+        width: 100%;
+        height: 85lvh;
+        border: 1px solid var(--home-line);
+
+        .main__load {
+            width: 100%;
+            height: 100%;
+
+            .load__body {
+                position: relative;
+                height: 100%;
+                border: 2px solid var(--home-file-border);
+                border-radius: 10px;
+                @include Flex;
+
+                input[type="file"] {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+
+                    &::-webkit-file-upload-button {
+                        display: none;
+                    }
+                }
+            }
+
+            .load__files {
+                width: 30%;
+                height: 100%;
+                padding-inline: 20px;
+
+                .files__item {
+                    cursor: pointer;
+                    color: var(--home-file-card-text);
+                    overflow: hidden;
+                    width: 100%;
+                    padding: 10px;
+                    background: var(--home-file-card);
+                    border: 2px solid var( --home-file-card-border);
+
+                    &:hover {
+                        background: var(--home-file-card-bg-hover);
+                    }
+                }
+            }
+        }
+    }
+}

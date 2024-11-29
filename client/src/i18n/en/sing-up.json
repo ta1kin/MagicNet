@@ -1,0 +1,75 @@
+{
+    "title": "Registration",
+    "header": {
+        "0": {
+            "description": "Registering a new user",
+            "title": "Who are you?"
+        },
+        "1": {
+            "description": "Registering a new user",
+            "title": "Choose your field of activity",
+            "postTitle": "At least one option must be selected!"
+        },
+        "2": {
+            "description": "Completing registration",
+            "title": "Enter user data"
+        },
+        "3": {
+            "title": "An email has been sent to {{email}} for account confirmation and access to your personal account",
+            "error": "An error occurred during registration!"
+        }
+    },
+    "body": {
+        "0": {
+            "radioList": [
+                "Programmer",
+                "Cybersecurity Specialist",
+                "Listener"
+            ],
+            "programmer": "Programmer",
+            "cyberSec": "Cybersecurity Specialist",
+            "listener": "Listener",
+            "link": "Already have an account?"
+        },
+        "1": {
+            "programmer": [
+                "Web development",
+                "Desktop app development",
+                "Administration"
+            ],
+            "cyberSec": [
+                "Red team",
+                "Blue team",
+                "Yellow team"
+            ],
+            "listener": [
+                "Employer",
+                "User",
+                "Other"
+            ]
+        },
+        "2": {
+            "email": "Email",
+            "pass": "Password",
+            "repass": "Repeat password"
+        }
+    },
+    "btns": {
+        "0": {
+            "next": "Next",
+            "prev": "Back"
+        },
+        "1": {
+            "next": "Next",
+            "prev": "Back"
+        },
+        "2": {
+            "next": "Next",
+            "prev": "Back"
+        },
+        "3": {
+            "next": "Return to login",
+            "error": "Try again"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+:root {
+    #light {
+        --book-bg: #d6beae;
+        --book-line: #33272a2b;
+    }
+    
+    #dark {
+        --book-bg: #242629;
+        --book-line: #fffffe35;
+    }
+}
+
+.book-page {
+    background: var(--book-bg);
+    padding-block: 40px;
+    min-height: 65lvh;
+    border-top: 1.5px solid var(--book-line);
+    border-bottom: 1.5px solid var(--book-line);
+}

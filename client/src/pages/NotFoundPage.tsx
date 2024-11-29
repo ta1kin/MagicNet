@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import NotFoundContent from '@Components/NotFound/'
+import NotFoundContent from '@/components/NotFound/'
 
 
 const NotFoundPage = () => {

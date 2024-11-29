@@ -1,31 +1,31 @@
-version: '3.9'
-
 services:
-
   db:
-    image: postgres
-    container_name: postgres_conteiner
+    image: postgres:latest
     restart: always
     shm_size: 128mb
     environment:
       POSTGRES_DB: magic
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    networks:
+      - my-network
 
   pgadmin4:
     image: elestio/pgadmin
-    container_name: pgadmin_conteiner
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@ya.ru
       PGADMIN_DEFAULT_PASSWORD: pgadmin
       PGADMIN_LISTEN_PORT: 8080
+    depends_on:
+      - db
     ports:
         - 8080:8080
 
   redis:
     image: redis:latest
-    container_name: redis-container
     restart: unless-stopped
     environment:
       REDIS_PASSWORD: password
@@ -33,3 +33,30 @@ services:
       REDIS_USER_PASSWORD: password
     ports:
       - 6379:6379
+
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+      redis:
+        condition: service_started
+    ports:
+      - 3000:3000
+
+  client:
+    build: 
+      context: .
+      dockerfile: ./client/Dockerfile
+    depends_on:
+      server:
+        condition: service_started
+    ports:
+      - 4173:4173
+
+networks:
+  my-network:
+    driver: bridge

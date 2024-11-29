@@ -1,0 +1,95 @@
+:root {
+    #light {
+        --info-layout-bg: #faeee7;
+
+        --info-layout-headline: #33272a;
+        --info-layout-sub-headline: #3c3336;
+        --info-layout-paragraph: #594a4e;
+
+        --info-layout-nav: #231a1c;
+        --info-layout-nav-decoration: #2f2427;
+        --info-layout-nav-decoration-hover: #231a1c4c;
+
+        --info-layout-button-bg: #ff8ba7;
+        --info-layout-button-text-color: #33272a;
+        --info-layout-button-shadow: #33272a;
+    }
+    
+    #dark {
+        --info-layout-bg: #16161a;
+
+        --info-layout-headline: #fffffe;
+        --info-layout-sub-headline: #94a1b2;
+        --info-layout-paragraph: #94a1b2;
+
+        --info-layout-nav: #fffffe;
+        --info-layout-nav-decoration: #94a1b2;
+        --info-layout-nav-decoration-hover: #01010142;
+
+        --info-layout-button-bg: #7f5af0;
+        --info-layout-button-text-color: #fffffe;
+        --info-layout-button-shadow: #fffffe6a;
+    }
+}
+
+
+.info-layout__header {
+    background: var(--info-layout-bg);
+
+    .nav__link {
+        font-weight: 600;
+        font-size: 1.2em;
+        color: var(--info-layout-nav);
+        transition: letter-spacing .5s ease;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--info-layout-nav-decoration-hover);
+            letter-spacing: 1px;
+        }
+
+        &.is-active {
+            text-decoration: underline;
+            text-decoration-color: var(--info-layout-nav-decoration);
+        }
+    }
+
+
+    .btn {
+        height: 60px;
+        font-weight: 800;
+        background: var(--info-layout-button-bg);
+        color: var(--info-layout-button-text-color);
+        border-radius: 6px;
+
+        &:hover {
+            box-shadow: 0px 2px 4px var(--info-layout-button-shadow);
+        }
+
+        &:active {
+            translate: 0px 2px;
+            box-shadow: 0px 0px 4px var(--info-layout-button-shadow);
+        }
+    }
+
+    .bottom__img {
+        width: 31%;
+    }
+}
+
+.info-layout__footer {
+    background: var(--info-layout-bg);
+
+    img {
+        width: 60px;
+
+        &.btn {
+            width: 40px;
+            transition: all .5s ease;
+            
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+}

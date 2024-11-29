@@ -1,6 +1,6 @@
-import { useTranslation } from "react-i18next"
+import { useTranslation } from 'react-i18next'
 
-import InfoContent from '@Components/Info/'
+import InfoContent from '@/components/Info/'
 
 
 const InfoPage = () => {

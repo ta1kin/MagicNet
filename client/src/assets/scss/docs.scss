@@ -1,0 +1,77 @@
+:root {
+    #light {
+        --docs-bg: #fffffe;
+        --docs-color: #33272a;
+
+        --docs-select-bg: #faeee7;
+        --docs-select-border: #ff8ba7;
+        --docs-select-shadow: #33272a7d;
+
+        --docs-block-bg: #fffffe;
+        --docs-block-card-bg: #faeee7;
+    }
+    
+    #dark {
+        --docs-bg: #242629;
+        --docs-color: #fffffe;
+
+        --docs-select-bg: #16161a;
+        --docs-select-border: #7f5af0;
+        --docs-select-shadow: #b090f051;
+
+        --docs-block-bg: #242629;
+        --docs-block-card-bg: #16161a;
+    }
+}
+
+.docs-page {
+    background: var(--docs-bg);
+    padding-block: 40px;
+
+    .docs-page__docs {
+        background: transparent;
+        min-height: 53lvh;
+
+        .select__block {
+            width: 75%;
+            padding: 20px;
+            background: var(--docs-select-bg);
+            border: 2px solid var(--docs-select-border);
+            border-radius: 6px;
+            box-shadow: 0px 0px 4px var(--docs-select-shadow);
+        }
+    
+        .list__block {
+            width: 75%;
+            background: var(--docs-block-bg);
+    
+            .block__card {
+                background: var(--docs-block-card-bg);
+                padding: 10px;
+
+                .card__text {
+                    color: var(--docs-color);
+
+                    p {
+                        font-size: 1.1em;
+                        font-weight: 500;
+                    }
+                }
+
+                .card__btn {
+                    width: 250px ;
+
+                    svg {
+                        transition: all .5s ease;
+                    }
+
+                    &:hover {
+                        svg {
+                            translate: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

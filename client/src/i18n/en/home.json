@@ -1,3 +1,57 @@
 {
-    "title": "Личный кабинет"
+    "title": "Personal Cabinet",
+    "nav": {
+        "panel": "Navigation",
+        "list": [
+            "Data",
+            "Settings",
+            "Book Upload"
+        ],
+        "exit": "Logout"
+    },
+    "personal": {
+        "nickname": "Username:",
+        "name": "Full Name:",
+        "phone": "Phone:"
+    },
+    "settings": {
+        "list": [
+            {
+                "headline": "Profile:",
+                "list": [
+                    {
+                        "inp": "New Nickname",
+                        "btn": "Change",
+                        "item": "Change Phone Number"
+                    },
+                    {
+                        "inp": "New First Name",
+                        "btn": "Change",
+                        "item": "Change Last Name"
+                    },
+                    {
+                        "inp": "New Phone",
+                        "btn": "Change",
+                        "item": "Change Nickname"
+                    }
+                ]
+            },
+            {
+                "headline": "Security:",
+                "list": [
+                    {
+                        "inp": "New Password",
+                        "btn": "Change",
+                        "item": "Change Password"
+                    }
+                ]
+            }
+        ],
+        "delete": "Delete Profile"
+    },
+    "load": {
+        "input": "Upload file(s)",
+        "alert": "File upload limit exceeded!",
+        "save": "Save"
+    }
 }

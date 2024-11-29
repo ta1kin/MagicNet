@@ -1,0 +1,19 @@
+:root {
+    #light {
+        --label-color: #33272a;
+        --label-color-focused: #ff8ba7;
+    }
+    
+    #dark {
+        --label-color: #94a1b2;
+        --label-color-focused: #7f5af0;
+    }
+}
+
+.MuiInputLabel-root {
+    color: var(--label-color) !important;
+
+    &.Mui-focused {
+        color: var(--label-color-focused) !important;
+    }
+}

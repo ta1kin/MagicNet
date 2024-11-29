@@ -3,4 +3,5 @@ export interface SingUpState {
     maxStep: number
     isClicked: boolean
     isLoading: boolean
+    isValid: boolean
 }

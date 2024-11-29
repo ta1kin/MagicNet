@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 
-import RecoveryPassContent from '@Components/Auth/RecoveryPass'
+import RecoveryPassContent from '@/components/Auth/RecoveryPass'
 
 
 const RecoveryPage = () => {
