@@ -20,20 +20,6 @@ services:
     networks:
       - app-network
 
-  # pgadmin4:
-  #   image: elestio/pgadmin
-  #   restart: always
-  #   environment:
-  #     PGADMIN_DEFAULT_EMAIL: admin@ya.ru
-  #     PGADMIN_DEFAULT_PASSWORD: pgadmin
-  #     PGADMIN_LISTEN_PORT: 8080
-  #   depends_on:
-  #     - db
-  #   ports:
-  #       - 8080:8080
-  #   networks:
-  #     - app-network
-
   redis:
     image: redis:latest
     restart: unless-stopped
@@ -76,22 +62,20 @@ services:
     networks:
       - app-network
 
-  nginx:
-    container_name: proxy_nginx
-    depends_on:
-      - server
-      - db
-      - redis
-      - client
+  proxy_nginx:
     image: nginx:latest
-    ports:
-      - 80:80
+    depends_on:
+      - client
+      - server
     env_file:
       - ./server/.env
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./client/dist:/var/www/dist
     restart: always
+    command: /bin/sh -c "sleep 15 && nginx -g 'daemon off;'"
+    ports:
+      - "80:80"
     networks:
       - app-network
 

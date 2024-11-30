@@ -35,11 +35,11 @@ const start = async () => {
 
   app.use( fileUpload() )
 
-  app.use( '/api', homeRouter )
-  app.use( '/api/auth', authRouter )
-  app.use( '/api', configRouter )
-  app.use( '/api', infoRouter )
-  app.use( '/api', docsRouter )
+  app.use( '/', homeRouter )
+  app.use( '/auth', authRouter )
+  app.use( '/', configRouter )
+  app.use( '/', infoRouter )
+  app.use( '/', docsRouter )
 
   app.use( notFound )
   app.use( errorHandler )
@@ -56,6 +56,7 @@ start()
   })
   .catch( async err => {
     console.debug( err )
+    console.error("Ошибка при старте сервера:", err);
     await prisma.$disconnect
     await redis.quit
     process.exit( 1 )
