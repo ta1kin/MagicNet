@@ -16,7 +16,6 @@ services:
       start_period: 30s
     ports:
       - 5432:5432
-    
     networks:
       - app-network
 
@@ -51,7 +50,7 @@ services:
       - app-network
 
   client:
-    build: 
+    build:
       context: .
       dockerfile: ./client/Dockerfile
     depends_on:
@@ -72,10 +71,12 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./client/dist:/var/www/dist
+      - /etc/letsencrypt:/etc/letsencrypt
     restart: always
     command: /bin/sh -c "sleep 15 && nginx -g 'daemon off;'"
     ports:
-      - "80:80"
+      - 80:80
+      - 443:443
     networks:
       - app-network
 
