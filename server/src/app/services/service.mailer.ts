@@ -4,7 +4,8 @@ import dotenv from 'dotenv'
 import path from 'path'
 
 dotenv.config({ path: 'src/.env' })
-const HOST = process.env.HOST || 'localhost'
+ 
+const HOST = 'magicnet.site'
 const PORT = process.env.PORT || 3000
 
 const MAIL_SERVICE = process.env.EMAIL_SERVICE
@@ -43,7 +44,7 @@ export const sendVerifyToEmail = async ( to: string, access_token: string ) => {
         from: MAIL_USER,
         to: to,
         subject: 'Подтверждение регистрации!',
-        html: await ejs.renderFile( ejsPath, { HOST, PORT, access_token } )
+        html: await ejs.renderFile( ejsPath, { HOST, access_token } )
     }
 
     return await transporter.sendMail( mailOptions)
